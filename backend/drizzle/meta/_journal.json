@@ -36,6 +36,13 @@
       "when": 1791122661903,
       "tag": "0004_backfill_offer_categories",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791139890170,
+      "tag": "0005_sloppy_changeling",
+      "breakpoints": true
     }
   ]
 }

@@ -3,6 +3,7 @@ import { boolean, index, integer, jsonb, pgEnum, pgTable, primaryKey, text, time
 const timestamptz = (name: string) => timestamp(name, { withTimezone: true });
 
 export const userStatus = pgEnum('user_status', ['active', 'blocked']);
+export const telegramConnectionKind = pgEnum('telegram_connection_kind', ['bot', 'account']);
 
 export const users = pgTable(
   'users',
@@ -32,6 +33,17 @@ export const roles = pgTable(
   },
   (table) => [uniqueIndex('roles_key_unique').on(table.key)],
 );
+
+export const telegramConnections = pgTable('telegram_connections', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+  kind: telegramConnectionKind('kind').notNull(),
+  telegramId: text('telegram_id').notNull(),
+  name: text('name').notNull(),
+  username: text('username'),
+  encryptedCredentials: text('encrypted_credentials').notNull(),
+  verifiedAt: timestamptz('verified_at').notNull().defaultNow(),
+}, (table) => [uniqueIndex('telegram_connections_owner_identity').on(table.userId, table.telegramId)]);
 
 export const permissions = pgTable('permissions', {
   key: text('key').primaryKey(),

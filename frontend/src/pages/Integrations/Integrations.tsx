@@ -11,6 +11,7 @@ import {
   type ShopeeIntegration,
 } from '../../services/integrations'
 import './Integrations.css'
+import { Telegram } from './Telegram'
 
 export function Integrations() {
   const [params] = useSearchParams()
@@ -151,6 +152,7 @@ export function Integrations() {
             O Secret é criptografado e as ofertas desta integração são atualizadas automaticamente.
           </footer>
         </section>
+        <Telegram />
       </div>
     </AppLayout>
   )

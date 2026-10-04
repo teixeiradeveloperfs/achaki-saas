@@ -1,4 +1,5 @@
 .integrations-page { display: grid; gap: 22px; width: 100%; padding: 32px 32px 64px; }
+.integration-form select { display: block; width: 100%; margin-top: 8px; height: 54px; padding: 0 12px; border: 1px solid var(--border); border-radius: 14px; background: var(--field); color: var(--text); font: inherit; }
 .integrations-page__header { max-width: 680px; }
 .integrations-page__eyebrow { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 .integrations-page__header h1 { margin-top: 6px; font-size: clamp(2.25rem, 5vw, 2.75rem); line-height: 1; letter-spacing: -.06em; }
