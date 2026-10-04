@@ -1,0 +1,17 @@
+.achaki-brand { display: inline-block; width: 192px; vertical-align: middle; }
+.achaki-brand--symbol { width: 48px; }
+.achaki-brand img { width: 100%; height: auto; }
+.achaki-brand__light { display: block; }
+.achaki-brand__dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  .achaki-brand[data-brand-theme="system"] .achaki-brand__light { display: none; }
+  .achaki-brand[data-brand-theme="system"] .achaki-brand__dark { display: block; }
+}
+[data-theme="light"] .achaki-brand[data-brand-theme="system"] .achaki-brand__light,
+.achaki-brand[data-brand-theme="light"] .achaki-brand__light { display: block; }
+[data-theme="light"] .achaki-brand[data-brand-theme="system"] .achaki-brand__dark,
+.achaki-brand[data-brand-theme="light"] .achaki-brand__dark { display: none; }
+[data-theme="dark"] .achaki-brand[data-brand-theme="system"] .achaki-brand__light,
+.achaki-brand[data-brand-theme="dark"] .achaki-brand__light { display: none; }
+[data-theme="dark"] .achaki-brand[data-brand-theme="system"] .achaki-brand__dark,
+.achaki-brand[data-brand-theme="dark"] .achaki-brand__dark { display: block; }

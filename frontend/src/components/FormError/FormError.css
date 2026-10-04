@@ -1,0 +1,11 @@
+.form-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--danger);
+  font-size: 0.875rem;
+}
+
+.form-error svg {
+  flex: none;
+}

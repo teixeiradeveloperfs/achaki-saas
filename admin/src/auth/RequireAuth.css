@@ -1,0 +1,25 @@
+.auth-offline {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  min-height: 100svh;
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.auth-offline h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.auth-offline .link {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}

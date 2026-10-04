@@ -1,0 +1,38 @@
+# Local development services. Production uses a managed Postgres via DATABASE_URL.
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: achaki-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: achaki
+      POSTGRES_PASSWORD: achaki
+      POSTGRES_DB: achaki
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - achaki-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U achaki -d achaki']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: achaki-redis
+    restart: unless-stopped
+    command: ['redis-server', '--appendonly', 'yes']
+    ports:
+      - '127.0.0.1:6379:6379'
+    volumes:
+      - achaki-redis:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  achaki-postgres:
+  achaki-redis:

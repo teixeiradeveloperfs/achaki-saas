@@ -1,0 +1,35 @@
+.integrations-page { display: grid; gap: 22px; width: 100%; padding: 32px 32px 64px; }
+.integrations-page__header { max-width: 680px; }
+.integrations-page__eyebrow { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.integrations-page__header h1 { margin-top: 6px; font-size: clamp(2.25rem, 5vw, 2.75rem); line-height: 1; letter-spacing: -.06em; }
+.integrations-page__header > p:last-child { margin-top: 10px; color: var(--muted); }
+.integration-welcome { display: flex; gap: 12px; padding: 16px 18px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border)); border-radius: 16px; background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.integration-welcome svg { flex: none; color: var(--accent); }
+.integration-welcome p { margin-top: 2px; color: var(--muted); font-size: .875rem; }
+.integration-card { width: 100%; overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: var(--surface); }
+.integration-card__header { display: flex; align-items: center; gap: 16px; padding: 24px; border-bottom: 1px solid var(--border); }
+.integration-card__brand { display: grid; place-items: center; flex: none; width: 50px; height: 50px; border-radius: 15px; background: #ee4d2d; color: #fff; font-size: 1.4rem; font-weight: 800; }
+.integration-card__header > div:last-child { flex: 1; min-width: 0; }
+.integration-card__title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.integration-card__title-row h2 { font-size: 1.15rem; }
+.integration-card__header p { margin-top: 3px; color: var(--muted); font-size: .875rem; }
+.integration-status { padding: 3px 9px; border-radius: 999px; background: var(--field-hover); color: var(--muted); font-size: .72rem; font-weight: 600; }
+.integration-status.is-ready { background: color-mix(in srgb, var(--success) 14%, var(--surface)); color: var(--success); }
+.integration-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 24px; }
+.integration-toggle, .integration-feedback, .integration-actions { grid-column: 1 / -1; }
+.integration-toggle { display: flex; align-items: center; gap: 10px; width: fit-content; cursor: pointer; font-size: .9rem; }
+.integration-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.integration-toggle span { position: relative; width: 42px; height: 24px; border-radius: 999px; background: var(--field-hover); border: 1px solid var(--border-strong); transition: .15s; }
+.integration-toggle span::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--muted); transition: .15s; }
+.integration-toggle input:checked + span { border-color: var(--accent); background: var(--accent); }
+.integration-toggle input:checked + span::after { left: 21px; background: var(--ink); }
+.integration-toggle input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 3px; }
+.integration-feedback { padding: 11px 14px; border-radius: 12px; font-size: .875rem; }
+.integration-feedback.is-error { background: color-mix(in srgb, var(--danger) 10%, transparent); color: var(--danger); }
+.integration-feedback.is-success { background: color-mix(in srgb, var(--success) 10%, transparent); color: var(--success); }
+.integration-actions { display: flex; align-items: center; gap: 12px; }
+.integration-test { height: 44px; padding: 0 18px; border: 1px solid var(--border-strong); border-radius: 999px; background: transparent; color: var(--text); cursor: pointer; }
+.integration-test:disabled { opacity: .45; cursor: not-allowed; }
+.integration-card__footer { display: flex; align-items: center; gap: 9px; padding: 15px 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+.integration-card__footer svg { flex: none; color: var(--accent); }
+@media (max-width: 700px) { .integrations-page { padding: 24px 16px 48px; } .integration-form { grid-template-columns: 1fr; } .integration-actions { align-items: stretch; flex-direction: column; } }

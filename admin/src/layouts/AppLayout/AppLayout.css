@@ -1,0 +1,259 @@
+.app {
+  --sidebar-width: 256px;
+  display: flex;
+  min-height: 100svh;
+}
+
+.app__sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: var(--sidebar-width);
+  height: 100svh;
+  padding: 28px 16px 16px;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  overflow-y: auto;
+}
+
+.app__brand-link {
+  align-self: flex-start;
+  margin: 0 12px 12px;
+  border-radius: 6px;
+}
+
+.app__brand {
+  display: block;
+  width: 120px;
+}
+
+.app__brand-symbol {
+  display: none;
+  width: 32px;
+}
+
+/* Round handle sitting on the sidebar edge. */
+.app__collapse {
+  position: fixed;
+  top: 26px;
+  left: calc(var(--sidebar-width) - 18px);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.app__collapse:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.app__collapse svg {
+  transition: transform 0.2s;
+}
+
+.app__nav-title {
+  margin: 24px 12px 8px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.app__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
+}
+
+button.app__nav-item {
+  width: 100%;
+  background: none;
+  cursor: pointer;
+}
+
+.app__nav-item:hover {
+  color: var(--text);
+  background: var(--field);
+}
+
+.app__nav-item.is-selected {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--field-hover);
+}
+
+.app__nav-item.is-selected svg {
+  color: var(--accent);
+}
+
+.app__collapse:focus-visible,
+.app__nav-item:focus-visible,
+.app__brand-link:focus-visible,
+.app__menu:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app__sidebar-bottom {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.app__account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 4px 12px 8px;
+  color: var(--muted);
+}
+
+.app__account svg {
+  flex: none;
+}
+
+.app__account span {
+  display: grid;
+  min-width: 0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.app__account strong {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.app__main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 901px) {
+  .app.is-collapsed {
+    --sidebar-width: 76px;
+  }
+
+  .is-collapsed .app__collapse svg {
+    transform: rotate(180deg);
+  }
+
+  .is-collapsed .app__brand,
+  .is-collapsed .app__nav-item span,
+  .is-collapsed .app__account span {
+    display: none;
+  }
+
+  .is-collapsed .app__account {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .is-collapsed .app__brand-symbol {
+    display: block;
+  }
+
+  .is-collapsed .app__brand-link {
+    align-self: center;
+    margin-inline: 0;
+  }
+
+  /* Group titles become a thin divider so the icons keep their grouping. */
+  .is-collapsed .app__nav-title {
+    height: 1px;
+    margin: 16px 8px;
+    overflow: hidden;
+    background: var(--border);
+    color: transparent;
+  }
+
+  .is-collapsed .app__nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Leaves room for the handle, which overlaps the content edge. */
+  .app__main {
+    padding-left: 8px;
+  }
+}
+
+.app__topbar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app__topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .app__menu {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+  }
+
+  .app__sidebar {
+    display: none;
+    position: fixed;
+    top: 60px;
+    z-index: 20;
+    width: min(288px, 100%);
+    height: calc(100svh - 60px);
+    padding-top: 4px;
+  }
+
+  .app__sidebar.is-open {
+    display: flex;
+  }
+
+  .app__brand-link,
+  .app__collapse {
+    display: none;
+  }
+}

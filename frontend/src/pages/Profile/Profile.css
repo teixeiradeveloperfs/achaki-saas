@@ -1,0 +1,22 @@
+.profile-page { display: grid; gap: 20px; width: 100%; padding: 32px 32px 64px; }
+.profile-page__header { max-width: 680px; }
+.profile-page__eyebrow { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.profile-page__header h1 { margin: 6px 0 0 -.04em; font-size: clamp(2.25rem,5vw,2.75rem); line-height: 1; letter-spacing: -.065em; }
+.profile-page__header > p:last-child { margin-top: 10px; color: var(--muted); }
+.profile-feedback { display: flex; align-items: center; gap: 9px; padding: 12px 15px; border: 1px solid var(--border); border-radius: 13px; font-size: .875rem; }
+.profile-feedback svg { flex: none; }
+.profile-feedback.is-success { color: var(--success); }
+.profile-feedback.is-error { color: var(--danger); }
+.profile-card { overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: var(--surface); }
+.profile-section { display: grid; grid-template-columns: minmax(230px,.65fr) minmax(0,1.35fr); gap: 32px; padding: 26px; border-bottom: 1px solid var(--border); }
+.profile-section > header { display: flex; align-items: flex-start; gap: 12px; }
+.profile-section > header > span { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--field); color: var(--accent); }
+.profile-section h2 { font-size: 1rem; }
+.profile-section header p { margin-top: 4px; color: var(--muted); font-size: .8rem; }
+.profile-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.profile-current-password { grid-column: 1 / -1; max-width: calc(50% - 9px); }
+.profile-actions { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 26px; }
+.profile-actions p { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .78rem; }
+.profile-actions svg { flex: none; color: var(--accent); }
+@media (max-width: 800px) { .profile-section { grid-template-columns: 1fr; }.profile-current-password { max-width: none; } }
+@media (max-width: 600px) { .profile-page { padding: 24px 16px 48px; }.profile-fields { grid-template-columns: 1fr; }.profile-current-password { grid-column: auto; }.profile-actions { align-items: stretch; flex-direction: column; }.profile-actions .button { width: 100%; } }

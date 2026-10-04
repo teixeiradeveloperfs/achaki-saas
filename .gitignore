@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/
+
+**/node_modules/
+**/dist/
+**/coverage/
+**/*.tsbuildinfo
+**/*.log
+
+**/.env
+**/.env.*
+!**/.env.example
+
+# Arquivo raster antigo mantido localmente; os ícones oficiais ficam em public/icons.
+frontend/frontend

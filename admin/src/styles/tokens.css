@@ -1,0 +1,18 @@
+/* Brand colors come from BRAND.md; the app is dark-only, so the accent is the dark-background blue. */
+:root {
+  --bg: #050505;
+  --ink: #0b1023;
+  --surface: #0c0c0d;
+  --field: #111112;
+  --field-hover: #171718;
+  --border: #242426;
+  --border-strong: #3a3a3d;
+  --text: #f8f9fc;
+  --muted: #8e8e93;
+  --accent: #7896ff;
+  --accent-hover: #93abff;
+  --success: #6fd3a5;
+  --danger: #ff8f8f;
+
+  --sans: 'Inter Variable', system-ui, 'Segoe UI', Roboto, sans-serif;
+}

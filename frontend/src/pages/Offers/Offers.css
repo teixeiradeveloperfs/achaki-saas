@@ -1,0 +1,52 @@
+.my-offers { display: grid; gap: 20px; width: 100%; padding: 32px 32px 64px; }
+.my-offers__header { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.my-offers__eyebrow { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.my-offers__header h1 { margin: 6px 0 0 -.04em; font-size: clamp(2.25rem,5vw,2.75rem); line-height: 1; letter-spacing: -.065em; }
+.my-offers__header > div > p:last-child { margin-top: 10px; color: var(--muted); }
+.my-offers__sync { display: inline-flex; align-items: center; gap: 9px; flex: none; height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: var(--accent); color: var(--ink); font-weight: 650; cursor: pointer; }
+.my-offers__sync:disabled { opacity: .55; cursor: progress; }
+.offer-search { display: grid; grid-template-columns: minmax(240px,1fr) minmax(180px,240px) auto; gap: 9px; max-width: 900px; }
+.offer-search__input { position: relative; display: flex; align-items: center; }
+.offer-search__input svg { position: absolute; left: 15px; color: var(--muted); }
+.offer-search input, .offer-search select { width: 100%; height: 48px; border: 1px solid var(--border); border-radius: 14px; background: var(--field); color: var(--text); outline: none; }
+.offer-search input { padding: 0 14px 0 46px; }
+.offer-search select { padding: 0 13px; }
+.offer-search input:focus { border-color: var(--accent); }
+.offer-search button { height: 48px; padding: 0 17px; border: 1px solid var(--border); border-radius: 14px; background: var(--field-hover); color: var(--text); cursor: pointer; }
+.my-offers__feedback { display: flex; align-items: center; gap: 9px; padding: 12px 15px; border: 1px solid var(--border); border-radius: 13px; font-size: .875rem; }
+.my-offers__feedback svg { flex: none; }
+.my-offers__feedback.is-success { color: var(--success); }
+.my-offers__feedback.is-error { color: var(--danger); }
+.offer-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(245px,1fr)); gap: 18px; }
+.offer-card { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); transition: border-color .15s, transform .15s; }
+.offer-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.offer-card__image { position: relative; display: grid; place-items: center; aspect-ratio: 1.22; overflow: hidden; background: var(--field); color: var(--accent); }
+.offer-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.offer-card:hover .offer-card__image img { transform: scale(1.025); }
+.offer-card__image > span { position: absolute; top: 12px; right: 12px; padding: 5px 9px; border-radius: 8px; background: #087f5b; color: #fff; font-size: .75rem; font-weight: 750; }
+.offer-card__body { display: grid; gap: 10px; padding: 16px; }
+.offer-card__source { display: flex; align-items: center; min-width: 0; color: var(--muted); font-size: .72rem; white-space: nowrap; }
+.offer-card__source i { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 7px; border-radius: 7px; color: #fff; font-style: normal; font-weight: 800; }
+.offer-card__source i.is-shopee { background: #ee4d2d; }
+.offer-card__source i.is-amazon { background: #273142; }
+.offer-card__source i.is-mercado_livre { background: #2d72c7; }
+.offer-card__source span { overflow: hidden; margin-left: 4px; text-overflow: ellipsis; }
+.offer-card__category { width: fit-content; padding: 3px 8px; border-radius: 7px; background: var(--field); color: var(--accent); font-size: .68rem; font-weight: 600; }
+.offer-card h2 { min-height: 2.7em; overflow: hidden; color: var(--text); font-size: .92rem; font-weight: 580; line-height: 1.35; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.offer-card__price { display: flex; align-items: baseline; gap: 8px; }
+.offer-card__price strong { color: var(--text); font-size: 1.25rem; letter-spacing: -.03em; }
+.offer-card__price del { color: var(--muted); font-size: .75rem; }
+.offer-card__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 3px; }
+.offer-card__actions button, .offer-card__actions a { display: grid; place-items: center; min-height: 38px; padding: 0 10px; border-radius: 10px; font-size: .75rem; font-weight: 600; text-decoration: none; }
+.offer-card__actions button { border: 1px solid var(--border); background: var(--field); color: var(--text); cursor: pointer; }
+.offer-card__actions a { background: var(--accent); color: var(--ink); }
+.my-offers__state { display: grid; place-items: center; align-content: center; min-height: 350px; padding: 40px; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); color: var(--muted); text-align: center; }
+.my-offers__empty > span { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 14px; border-radius: 17px; background: var(--field); color: var(--accent); }
+.my-offers__empty h2 { color: var(--text); font-size: 1.1rem; }
+.my-offers__empty p { max-width: 500px; margin-top: 7px; font-size: .875rem; }
+.my-offers__empty a { margin-top: 16px; color: var(--accent); font-size: .875rem; font-weight: 600; text-decoration: none; }
+.my-offers__pagination { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); font-size: .8rem; }
+.my-offers__pagination > div { display: flex; align-items: center; gap: 12px; }
+.my-offers__pagination button { padding: 8px 12px; border: 1px solid var(--border); border-radius: 9px; background: var(--field); cursor: pointer; }
+.my-offers__pagination button:disabled { opacity: .4; cursor: not-allowed; }
+@media (max-width: 700px) { .my-offers { padding: 24px 16px 48px; }.my-offers__header { align-items: flex-start; flex-direction: column; }.my-offers__sync { width: 100%; justify-content: center; }.offer-search { grid-template-columns: 1fr; }.offer-search button { width: 100%; }.my-offers__pagination { align-items: flex-start; flex-direction: column; } }

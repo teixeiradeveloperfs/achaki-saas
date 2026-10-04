@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+*.tsbuildinfo
+
+# Secrets belong only in the deployment environment or local untracked files.
+.env
+.env.*
+!.env.example

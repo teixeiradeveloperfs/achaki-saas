@@ -1,0 +1,54 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(440px, 100%);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.auth__brand {
+  display: block;
+  align-self: center;
+  width: 132px;
+  margin-bottom: 36px;
+}
+
+.auth__title {
+  font-size: clamp(2.25rem, 9vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.065em;
+  /* Negative tracking shifts the text left of the fields; nudge it back. */
+  margin-left: -0.04em;
+  color: var(--text);
+  background: linear-gradient(95deg, #fff 45%, #a3a3a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Keeps descenders inside the clipped gradient. */
+  padding-bottom: 0.1em;
+}
+
+.auth__lead {
+  margin-top: 10px;
+  letter-spacing: -0.015em;
+  color: var(--muted);
+}
+
+.auth__lead strong {
+  font-weight: 500;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.auth__form {
+  display: grid;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.auth__submit {
+  margin-top: 6px;
+}
