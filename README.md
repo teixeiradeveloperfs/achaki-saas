@@ -83,6 +83,26 @@ URLs locais:
 - API: <http://localhost:36628>
 - Health check: <http://localhost:36628/health>
 
+## Telas do projeto
+
+As imagens abaixo foram capturadas em ambiente local com dados demonstrativos.
+
+### Painel do usuário
+
+![Dashboard do usuário](docs/screenshots/user-dashboard.png)
+
+![Ofertas do usuário](docs/screenshots/user-offers.png)
+
+![Integrações do usuário](docs/screenshots/user-integrations.png)
+
+### Painel administrativo
+
+![Dashboard administrativo](docs/screenshots/admin-dashboard.png)
+
+![Ofertas administrativas](docs/screenshots/admin-offers.png)
+
+![Integrações administrativas](docs/screenshots/admin-integrations.png)
+
 ## Variáveis de ambiente
 
 O arquivo `backend/.env.example` documenta as variáveis da API. Nunca versione `.env.development`, `.env.production` ou credenciais de provedores.
